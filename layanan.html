@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan & Pengaduan - SMAN 1 Bengkayang</title>
+    <link rel="icon"
+        href="https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/302501250_409405884637557_7064100765839085755_n.jpg?stp=dst-jpg_tt6&cstp=mx494x502&ctp=s494x502&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QuiSUS0BC98Q7kNvwEOB992&_nc_oc=AdpWWFjm5mOk1Nsh8NM3LDpTRkvn87LkPDf0vW7h6dBi7nq1RtH-cZGYKLavPxLM-CY&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=uBCLvRcHa5pNjVCHmuKVpQ&_nc_ss=7b2a8&oh=00_AQMzgL-oq6lxJciyEyrQ_ZygcFeoOkrRe-OWLdvrFJ1vWg&oe=6AC139E6"
+        type="image/jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/302501250_409405884637557_7064100765839085755_n.jpg?stp=dst-jpg_tt6&cstp=mx494x502&ctp=s494x502&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QuiSUS0BC98Q7kNvwEOB992&_nc_oc=AdpWWFjm5mOk1Nsh8NM3LDpTRkvn87LkPDf0vW7h6dBi7nq1RtH-cZGYKLavPxLM-CY&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=uBCLvRcHa5pNjVCHmuKVpQ&_nc_ss=7b2a8&oh=00_AQMzgL-oq6lxJciyEyrQ_ZygcFeoOkrRe-OWLdvrFJ1vWg&oe=6AC139E6"
+                    alt="Logo SMAN 1 Bengkayang" width="40" height="40"
+                    class="me-2 rounded-circle shadow-sm bg-white p-1">
+                SMAN 1 Bengkayang
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="aboutus.html#sejarah">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item" href="aboutus.html#visimisi">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="pengumuman.html">Pengumuman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan & Pengaduan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary">Portal Layanan Digital Siswa</h2>
+                <p class="text-muted">Pilih jenis layanan yang kamu butuhkan pada menu di bawah ini.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <ul class="nav nav-tabs nav-justified mb-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active py-3 fw-bold" id="konseling-tab" data-bs-toggle="tab"
+                                data-bs-target="#konseling-pane" type="button" role="tab">
+                                <i class="fa-solid fa-calendar-check me-2"></i> Form Konseling BK
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link py-3 fw-bold text-danger" id="pengaduan-tab" data-bs-toggle="tab"
+                                data-bs-target="#pengaduan-pane" type="button" role="tab">
+                                <i class="fa-solid fa-bullhorn me-2"></i> Form Pengaduan Siswa
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content bg-white p-4 p-md-5 rounded shadow-sm border" id="myTabContent">
+
+                        <div class="tab-pane fade show active" id="konseling-pane" role="tabpanel">
+                            <h4 class="fw-bold mb-3 text-primary border-bottom pb-2"><i
+                                    class="fa-solid fa-user-graduate me-2"></i> Pendaftaran Sesi Konseling</h4>
+
+                            <form id="formKonseling" onsubmit="handleFormSubmit(event, 'Konseling')">
+                                <div class="mb-3">
+                                    <label for="namaKonseling" class="form-label fw-semibold">Nama Lengkap Siswa
+                                        *</label>
+                                    <input type="text" class="form-control" id="namaKonseling"
+                                        placeholder="Masukkan nama lengkap" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="kelasKonseling" class="form-label fw-semibold">Kelas *</label>
+                                        <select class="form-select" id="kelasKonseling" required>
+                                            <option value="">-- Pilih Kelas --</option>
+                                            <option value="X (Sepuluh)">X (Sepuluh)</option>
+                                            <option value="XI (Sebelas)">XI (Sebelas)</option>
+                                            <option value="XII (Dua Belas)">XII (Dua Belas)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="topikKonseling" class="form-label fw-semibold">Topik Konseling
+                                            *</label>
+                                        <select class="form-select" id="topikKonseling" required>
+                                            <option value="">-- Pilih Topik --</option>
+                                            <option value="Akademik & Belajar">Akademik & Belajar</option>
+                                            <option value="Karir & Kuliah">Karir & Kuliah</option>
+                                            <option value="Pribadi & Sosial">Pribadi & Sosial</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tanggalKonseling" class="form-label fw-semibold">Rencana Tanggal
+                                        Pertemuan *</label>
+                                    <input type="date" class="form-control" id="tanggalKonseling" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="pesanKonseling" class="form-label fw-semibold">Pesan / Keluhan Singkat
+                                        *</label>
+                                    <textarea class="form-control" id="pesanKonseling" rows="4"
+                                        placeholder="Ceritakan singkat topik yang ingin didiskusikan..."
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+                                    <i class="fa-solid fa-paper-plane me-2"></i> Kirim Jadwal Konseling
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="pengaduan-pane" role="tabpanel">
+                            <h4 class="fw-bold mb-3 text-danger border-bottom pb-2"><i
+                                    class="fa-solid fa-triangle-exclamation me-2"></i> Form Pengaduan & Aspirasi</h4>
+
+                            <form id="formPengaduan" onsubmit="handleFormSubmit(event, 'Pengaduan')">
+                                <div class="mb-3">
+                                    <label for="kategoriLaporan" class="form-label fw-semibold">Kategori Laporan
+                                        *</label>
+                                    <select class="form-select" id="kategoriLaporan" required>
+                                        <option value="">-- Pilih Kategori --</option>
+                                        <option value="Fasilitas Rusak">Fasilitas Sekolah Rusak</option>
+                                        <option value="Bullying">Tindakan Perundungan (Bullying)</option>
+                                        <option value="Keamanan">Keamanan & Ketertiban</option>
+                                        <option value="Saran">Saran & Aspirasi</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="judulPengaduan" class="form-label fw-semibold">Judul Laporan *</label>
+                                    <input type="text" class="form-control" id="judulPengaduan"
+                                        placeholder="Contoh: AC Kelas XI IPA 1 Rusak" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="namaPelapor" class="form-label fw-semibold">Nama Pelapor
+                                        (Opsional)</label>
+                                    <input type="text" class="form-control" id="namaPelapor"
+                                        placeholder="Isi nama atau biarkan kosong jika ingin anonim">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="detailPengaduan" class="form-label fw-semibold">Detail Laporan *</label>
+                                    <textarea class="form-control" id="detailPengaduan" rows="4"
+                                        placeholder="Jelaskan rincian pengaduan secara jelas..." required></textarea>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="rahasiakanData" checked>
+                                    <label class="form-check-label text-muted small" for="rahasiakanData">
+                                        Rahasiakan identitas saya (Laporan aman & anonim)
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-danger w-100 fw-bold py-2">
+                                    <i class="fa-solid fa-shield-halved me-2"></i> Kirim Laporan Pengaduan
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5 class="fw-bold text-warning mb-3 d-flex align-items-center">
+                        <img src="https://scontent.fcgk12-1.fna.fbcdn.net/v/t39.30808-6/302501250_409405884637557_7064100765839085755_n.jpg?stp=dst-jpg_tt6&cstp=mx494x502&ctp=s494x502&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QuiSUS0BC98Q7kNvwEOB992&_nc_oc=AdpWWFjm5mOk1Nsh8NM3LDpTRkvn87LkPDf0vW7h6dBi7nq1RtH-cZGYKLavPxLM-CY&_nc_zt=23&_nc_ht=scontent.fcgk12-1.fna&_nc_gid=uBCLvRcHa5pNjVCHmuKVpQ&_nc_ss=7b2a8&oh=00_AQMzgL-oq6lxJciyEyrQ_ZygcFeoOkrRe-OWLdvrFJ1vWg&oe=6AC139E6"
+                            alt="Logo SMAN 1 Bengkayang" width="35" height="35" class="me-2 rounded-circle shadow-sm"
+                            style="background-color: white; padding: 2px;">
+                        SMAN 1 Bengkayang
+                    </h5>
+                    <p class="text-white-50">"Unggul Dalam Mutu, Prestasi Dalam Kreasi, Berkarakter Dan Teguh Dalam
+                        Imtaq Serta Berwawasan Lingkungan."</p>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <h5 class="fw-bold text-warning mb-3">Kontak Kami</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2">
+                            <i class="fas fa-home me-2"></i> Jl. Sanggau Ledo No. 17, Bengkayang, Kalimantan Barat
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:smansabky@gmail.com"
+                                class="text-white-50 text-decoration-none">smansabky@gmail.com</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:05626305183" class="text-white-50 text-decoration-none">05626305183</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-2 mb-3">
+            <div class="text-center">
+                <p class="small text-white-50 mb-0">&copy; 2026 SMAN 1 Bengkayang. Proyek Pemrograman Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalKonfirmasi" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3 border-0 shadow">
+                <div class="modal-body text-center">
+                    <div class="display-3 text-warning mb-3">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Konfirmasi Pengiriman</h4>
+                    <p class="text-muted">Apakah kamu sudah yakin data yang diisi sudah benar</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button type="button" class="btn btn-secondary px-4 fw-bold"
+                            data-bs-dismiss="modal">Tidak</button>
+                        <button type="button" class="btn btn-primary px-4 fw-bold" onclick="prosesKirim()">Ya</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSukses" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center border-0 shadow">
+                <div class="display-3 text-success mb-3">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="fw-bold mb-2" id="modalTitle">Berhasil!</h4>
+                <p class="text-muted mb-4" id="modalBody"></p>
+                <div>
+                    <button type="button" class="btn btn-success px-4 fw-bold" data-bs-dismiss="modal">Selesai</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
